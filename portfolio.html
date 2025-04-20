@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Studio 401</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ 
+</head>
+<body>
+    <img src="imagens/elementos/imagem (9).png" class="decorative-element fixed-element element-1" alt="Elemento decorativo 1">
+    <img src="imagens/elementos/imagem (16).png" class="decorative-element scroll-element element-2" alt="Elemento decorativo 2">
+    <img src="imagens/elementos/imagem (11).png" class="decorative-element fixed-element element-3" alt="Elemento decorativo 3">
+    <img src="imagens/elementos/imagem (13).png" class="decorative-element scroll-element element-4" alt="Elemento decorativo 4">
+    
+    <header>
+        <div class="logo">
+            <h1 class="studio-font">Studio 401</h1>
+        </div>
+        <nav class="menu-navegacao">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="portfolio.html">Portfólio</a></li>
+                <li><a href="quem-somos.html">Quem Somos?</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="portfolio-container">
+            <h2 class="studio-font">Nosso Portfólio</h2>
+            <p>Conheça nossos trabalhos e projetos realizados.</p>
+            
+            <!-- Sistema de Abas -->
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab(event, 'celva')">Celva</button>
+                <button class="tab-button" onclick="openTab(event, 'coreto')">Coreto</button>
+                <button class="tab-button" onclick="openTab(event, 'jama')">Baile do Jama</button>
+                <button class="tab-button" onclick="openTab(event, 'tuchi')">Tuchi no Sobrado 404</button>
+            </div>
+            
+            <!-- Conteúdo das Abas -->
+            <div id="celva" class="tab-content active-tab">
+                <div class="client-content">
+                    <div class="client-carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-slide">
+                                <img src="imagens/clientes/Celva/IMG_7734.PNG" alt="Celva projeto 2">
+                                <img src="imagens/clientes/Celva/IMG_7735.PNG" alt="Celva projeto 3">
+                                <img src="imagens/clientes/Celva/IMG_7736.PNG" alt="Celva projeto 4">
+                                <img src="imagens/clientes/Celva/IMG_7738.PNG" alt="Celva projeto 5">
+                                <img src="imagens/clientes/Celva/IMG_7739.PNG" alt="Celva projeto 6">
+                            </div>
+                            <button class="carousel-btn prev-btn" onclick="moveSlide(1, this.parentNode)">&#10094;</button>
+                            <button class="carousel-btn next-btn" onclick="moveSlide(-1, this.parentNode)">&#10095;</button>
+                        </div>
+                    </div>
+                    <div class="client-info">
+                        <h3 class="studio-font">Celva</h3>
+                        <div class="client-description">
+                            <h2>Funções</h2>
+                            <p>Planejamento estratégico <br>
+                                Captação de conteúdo <br>
+                                Edição de conteúdo<br>
+                                Analise de métricas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="coreto" class="tab-content">
+                <div class="client-content">
+                    <div class="client-carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-slide">
+                                <img src="imagens/clientes/Coreto/IMG_7740.PNG" alt="Coreto projeto 1">
+                                <img src="imagens/clientes/Coreto/IMG_7741.PNG" alt="Coreto projeto 2">
+                                <img src="imagens/clientes/Coreto/IMG_7742.PNG" alt="Coreto projeto 3">
+                            </div>
+                            <button class="carousel-btn prev-btn" onclick="moveSlide(1, this.parentNode)">&#10094;</button>
+                            <button class="carousel-btn next-btn" onclick="moveSlide(-1, this.parentNode)">&#10095;</button>
+                        </div>
+                    </div>
+                    <div class="client-info">
+                        <h3 class="studio-font">Coreto</h3>
+                        <div class="client-description">
+                            <p>@coretortm</p>
+                            <p>Funções:</p>
+                            <p>Planejamento estratégico</p>
+                            <p>Edição de conteúdo</p>
+                            <p>Analise de métricas</p> 
+                            <p>Cobertura live nos stories</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="jama" class="tab-content">
+                <div class="client-content">
+                    <div class="client-carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-slide">
+                                <img src="imagens/clientes/jama/image46.png" alt="Baile do Jama 1">
+                                <img src="imagens/clientes/jama/image47.png" alt="Baile do Jama 2">
+                                <img src="imagens/clientes/jama/image48.png" alt="Baile do Jama 3">
+                                <img src="imagens/clientes/jama/image49.png" alt="Baile do Jama 4">
+                                <img src="imagens/clientes/jama/image50.jpeg" alt="Baile do Jama 5">
+                            </div>
+                            <button class="carousel-btn prev-btn" onclick="moveSlide(1, this.parentNode)">&#10094;</button>
+                            <button class="carousel-btn next-btn" onclick="moveSlide(-1, this.parentNode)">&#10095;</button>
+                        </div>
+                    </div>
+                    <div class="client-info">
+                        <h3 class="studio-font">Baile do Jama</h3>
+                        <div class="client-description">
+                            <p>Produção completa do evento Baile do Jama, incluindo:</p>
+                            <p>- Direção artística</p>
+                            <p>- Cobertura fotográfica</p>
+                            <p>- Gestão de redes sociais</p>
+                            <p>- Produção de conteúdo digital</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tuchi" class="tab-content">
+                <div class="client-content">
+                    <div class="client-carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-slide">
+                                <img src="imagens\clientes\tuchi no sobrado\image51.png" alt="Tuchi projeto 1">
+                                <img src="imagens\clientes\tuchi no sobrado\image52.png" alt="Tuchi projeto 2">
+                                <img src="imagens\clientes\tuchi no sobrado\image53.png" alt="Tuchi projeto 3">
+                                <img src="imagens\clientes\tuchi no sobrado\image54.png" alt="Tuchi projeto 1">
+                                <img src="imagens\clientes\tuchi no sobrado\image55.png" alt="Tuchi projeto 2">
+                                
+                            </div>
+                            <button class="carousel-btn prev-btn" onclick="moveSlide(1, this.parentNode)">&#10094;</button>
+                            <button class="carousel-btn next-btn" onclick="moveSlide(-1, this.parentNode)">&#10095;</button>
+                        </div>
+                    </div>
+                    <div class="client-info">
+                        <h3 class="studio-font">Tuchi no Sobrado 404</h3>
+                        <div class="client-description">
+                            <p>Projeto especial com a artista Tuchi no espaço cultural Sobrado 404.</p>
+                            <p>- Produção audiovisual</p>
+                            <p>- Gestão de redes sociais</p>
+                            <p>- Criação de conteúdo exclusivo</p>
+                            <p>- Documentação artística</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Função para alternar entre abas
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active-tab");
+            }
+            
+            const tabButtons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            
+            document.getElementById(tabName).classList.add("active-tab");
+            evt.currentTarget.classList.add("active");
+            
+            // Reinicializar o carrossel da aba ativa
+            initCarousel(document.querySelector(`#${tabName} .carousel-container`));
+        }
+        
+        // Função para o carrossel (direção corrigida)
+        function moveSlide(direction, carousel) {
+            const slide = carousel.querySelector('.carousel-slide');
+            const slides = carousel.querySelectorAll('.carousel-slide img');
+            const slideWidth = carousel.offsetWidth;
+            
+            let currentPosition = parseInt(slide.style.transform?.replace('translateX(', '').replace('px)', '')) || 0;
+            let newPosition = currentPosition + (direction * slideWidth);
+            
+            // Limitar o movimento
+            const maxPosition = 0;
+            const minPosition = -((slides.length - 1) * slideWidth);
+            
+            if (newPosition > maxPosition) {
+                newPosition = minPosition;
+            } else if (newPosition < minPosition) {
+                newPosition = maxPosition;
+            }
+            
+            slide.style.transform = `translateX(${newPosition}px)`;
+        }
+        
+        // Função para inicializar um carrossel
+        function initCarousel(carousel) {
+            if (!carousel) return;
+            
+            const slide = carousel.querySelector('.carousel-slide');
+            const slides = carousel.querySelectorAll('.carousel-slide img');
+            const slideWidth = carousel.offsetWidth;
+            
+            // Resetar posição
+            slide.style.transform = 'translateX(0)';
+            
+            // Definir largura do slide
+            slide.style.width = `${slideWidth * slides.length}px`;
+            
+            // Definir largura de cada imagem
+            slides.forEach(img => {
+                img.style.width = `${slideWidth}px`;
+            });
+        }
+        
+        // Inicializar todos os carrosséis
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousels = document.querySelectorAll('.carousel-container');
+            
+            carousels.forEach(carousel => {
+                initCarousel(carousel);
+            });
+            
+            // Inicializar o carrossel da primeira aba como ativo
+            initCarousel(document.querySelector('.active-tab .carousel-container'));
+        });
+    </script>
+</body>
+</html>

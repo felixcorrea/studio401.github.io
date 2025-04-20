@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Somos?</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!-- Elementos decorativos -->
+    <img src="imagens/elementos/imagem (1).png" class="decorative-element fixed-element element-1" alt="Elemento decorativo 1">
+    <img src="imagens/elementos/imagem (2).png" class="decorative-element scroll-element element-2" alt="Elemento decorativo 2">
+    <img src="imagens/elementos/imagem (3).png" class="decorative-element fixed-element element-3" alt="Elemento decorativo 3">
+    <img src="imagens/elementos/imagem (8).png" class="decorative-element scroll-element element-4" alt="Elemento decorativo 4">
+
+    <header>
+        <div class="logo">
+            <h1 class="studio-font">Studio 401</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="portfolio.html">Portfólio</a></li>
+                <li><a href="quem-somos.html" class="active">Quem Somos?</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content">
+            <h2 class="studio-font">Quem Somos?</h2>
+
+            <p>Somos um estúdio de produção cultural e social media que transforma ideias em experiências envolventes e autênticas. Nossa missão é criar conexões reais por meio de conteúdos que emocionam, inspiram e impactam.</p>
+            
+            <p>No Studio 401, acreditamos no poder da arte e da comunicação para contar histórias que fazem a diferença. Com uma equipe talentosa e apaixonada, trabalhamos em projetos que vão da música às artes visuais, do digital ao presencial. Cada criação é pensada com estratégia e sensibilidade, garantindo que sua mensagem chegue de forma única ao público.</p>
+            
+            <p>Seja você um artista em busca de visibilidade ou uma marca querendo se conectar de verdade com seu público, o Studio 401 está pronto para fazer acontecer. Vamos juntos transformar ideias em experiências inesquecíveis!</p>
+        </section>
+  
+    </main>
+
+    <footer>
+        <p>&copy; Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Efeito de parallax para alguns elementos
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollElements = document.querySelectorAll('.scroll-element');
+            
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.pageYOffset;
+                
+                scrollElements.forEach(function(element, index) {
+                    // Ajuste a velocidade do movimento (quanto maior, mais rápido)
+                    const speed = 0.2 + (index * 0.05);
+                    const offset = scrollPosition * speed;
+                    
+                    // Aplica o movimento apenas no eixo Y
+                    element.style.transform = `translateY(${offset}px) rotate(${index % 2 === 0 ? '10deg' : '-10deg'})`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
