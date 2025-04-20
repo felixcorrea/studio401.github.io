@@ -23,12 +23,10 @@ body {
 }
 
 
+/* Adicione isto temporariamente ao CSS */
 @font-face {
     font-family: 'CRASEY';
-    src: url('./fonts/CRASEY.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+    src: url('https://raw.githubusercontent.com/seu-usuario/repo/main/fonts/CRASEY.woff2') format('woff2');
 }
 
 @font-face {
@@ -398,5 +396,140 @@ header, main, footer {
     .client-info {
         width: 100%;
         margin-top: 2rem;
+    }
+}
+
+/* ============================================= */
+/* MEDIA QUERIES PARA CELULAR (até 480px) */
+/* ============================================= */
+
+@media (max-width: 480px) {
+    /* Elementos decorativos - reduz tamanho e ajusta posição */
+    .decorative-element {
+        max-width: 80px;
+        opacity: 0.7;
+    }
+    
+    .element-1 {
+        top: 10%;
+        left: 2%;
+    }
+    
+    .element-2 {
+        bottom: 5%;
+        right: 2%;
+    }
+    
+    .element-3 {
+        top: 20%;
+        right: 1%;
+    }
+    
+    .element-4 {
+        bottom: 8%;
+        left: 3%;
+    }
+
+    /* Cabeçalho */
+    header {
+        padding: 0.5rem 0;
+    }
+    
+    .logo h1.studio-font {
+        font-size: 2.5rem; /* Reduz tamanho do logo */
+        margin: 0.5rem 0;
+    }
+
+    /* Menu de navegação */
+    nav ul {
+        flex-wrap: wrap;
+        padding: 0.5rem;
+    }
+    
+    nav ul li {
+        margin: 0.3rem;
+    }
+    
+    nav ul li a {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    /* Conteúdo principal */
+    main {
+        padding: 1rem;
+        margin: 1rem auto;
+        border-radius: 5px;
+    }
+    
+    .content {
+        padding: 1rem;
+        font-size: 1rem; /* Tamanho de fonte menor */
+        line-height: 1.5;
+    }
+    
+    .content h2.studio-font {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .content p {
+        font-size: 0.9rem;
+    }
+
+    /* Rodapé */
+    footer {
+        padding: 0.8rem 0;
+        font-size: 0.8rem;
+    }
+
+    /* Ajustes específicos para o background */
+    body {
+        background-attachment: scroll; /* Remove fixed para melhor performance */
+        background-size: cover;
+    }
+
+    /* Melhorias de espaçamento geral */
+    * {
+        line-height: 1.4;
+    }
+}
+
+/* ============================================= */
+/* MEDIA QUERIES PARA TABLETS (481px - 768px) */
+/* ============================================= */
+@media (min-width: 481px) and (max-width: 768px) {
+    .decorative-element {
+        max-width: 100px;
+    }
+    
+    .logo h1.studio-font {
+        font-size: 3rem;
+    }
+    
+    .content {
+        font-size: 1.1rem;
+    }
+    
+    nav ul li a {
+        padding: 0.4rem 0.9rem;
+    }
+}
+
+/* ============================================= */
+/* AJUSTES ESPECÍFICOS PARA TELAS MUITO PEQUENAS */
+/* ============================================= */
+@media (max-width: 360px) {
+    .logo h1.studio-font {
+        font-size: 2rem;
+    }
+    
+    nav ul li a {
+        padding: 0.2rem 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .content {
+        padding: 0.8rem;
     }
 }
