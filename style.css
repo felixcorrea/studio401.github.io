@@ -1,32 +1,38 @@
+/* Reset básico e variáveis */
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
+    --transparent-bg: rgba(0, 0, 0, 0.7);
+    --transparent-light: rgba(0, 0, 0, 0.5);
+    --accent-color: #555;
+    --font-main: 'Montserrat', Arial, sans-serif;
+    --font-special: 'CRASEY', sans-serif;
+}
 
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', Arial, sans-serif; 
-    color:#ffffff
+    font-family: var(--font-main);
+    color: var(--primary-color);
 }
 
 body {
     line-height: 1.6;
-    color: #333;
-    margin: 0;
-    padding: 0;
     background-image: url('imagens/fundo/bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     min-height: 100vh;
-    background-color: #f0f0f030; /* Cor similar ao seu fundo */
+    position: relative;
 }
 
-
-/* Adicione isto temporariamente ao CSS */
+/* Fontes */
 @font-face {
     font-family: 'CRASEY';
     src: url('https://raw.githubusercontent.com/seu-usuario/repo/main/fonts/CRASEY.woff2') format('woff2');
+    font-display: swap;
 }
 
 @font-face {
@@ -37,17 +43,17 @@ body {
     font-display: swap;
 }
 
-/* Ajuste para o conteúdo sobre a imagem de fundo */
+/* Estrutura principal */
 header {
-    background: rgba(0, 0, 0, 0.774); /* Fundo semi-transparente */
-    color: #fff;
+    background: var(--transparent-bg);
     padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
 }
-.studio-font{
-    font-family: 'CRASEY';
+
+.studio-font {
+    font-family: var(--font-special);
     font-size: 60px;
 }
 
@@ -60,10 +66,11 @@ nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
+    flex-wrap: wrap;
 }
 
 nav ul li a {
-    color: #fff;
+    color: var(--primary-color);
     text-decoration: none;
     padding: 0.5rem 1rem;
     margin: 0 0.5rem;
@@ -72,74 +79,95 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background: #555;
+    background: var(--accent-color);
 }
 
 nav ul li a.active {
-    background: #00000048;
+    background: rgba(0, 0, 0, 0.3);
     font-weight: bold;
 }
+
 main {
-    background-color: rgba(0, 0, 0, 0.685); /* Fundo semi-transparente para legibilidade */
+    background-color: var(--transparent-bg);
     padding: 2rem;
     max-width: 1200px;
     margin: 2rem auto;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-.banner {
-    background: rgba(0, 0, 0, 0.251); /* Verde com transparência */
-    color: rgba(0, 0, 0, 0.441);
-    padding: 2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    border-radius: 5px;
+    position: relative;
+    z-index: 2;
 }
 
 .content {
-    background: rgba(0, 0, 0, 0);
+    background: transparent;
     padding: 2rem;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align:justify;
-    font-size: x-large;
+    text-align: justify;
+    font-size: 1.2rem;
+    line-height: 1.8;
 }
 
 footer {
-    background: rgba(0, 0, 0, 0.7);
-    color: #ffffff;
+    background: var(--transparent-bg);
     text-align: center;
     padding: 1rem 0;
     margin-top: 2rem;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    nav ul li {
-        margin: 0.5rem 0;
-    }
-    
-    main {
-        padding: 1rem;
-    }
+/* Elementos decorativos */
+.decorative-element {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    max-width: 150px;
+    opacity: 0.9;
+    transition: transform 0.3s ease;
 }
 
-/* Estilos para o Portfólio */
+.fixed-element {
+    position: fixed;
+}
+
+.scroll-element {
+    position: absolute;
+}
+
+.element-1 {
+    top: 20%;
+    left: 5%;
+    transform: rotate(-15deg);
+}
+
+.element-2 {
+    bottom: 10%;
+    right: 5%;
+    transform: rotate(10deg);
+}
+
+.element-3 {
+    top: 30%;
+    right: 3%;
+    transform: rotate(5deg);
+}
+
+.element-4 {
+    bottom: 15%;
+    left: 8%;
+    transform: rotate(-10deg);
+}
+
+/* Estilos específicos para o Portfólio */
 .portfolio-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .tabs {
     display: flex;
     margin: 2rem 0 1rem;
     border-bottom: 1px solid #ddd;
+    flex-wrap: wrap;
 }
 
 .tab-button {
@@ -154,7 +182,7 @@ footer {
 }
 
 .tab-button:hover {
-    color: #333;
+    color: #bebebe;
 }
 
 .tab-button.active {
@@ -169,7 +197,7 @@ footer {
     left: 0;
     width: 100%;
     height: 3px;
-    background: #00000023;
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .tab-content {
@@ -205,139 +233,7 @@ footer {
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.carousel-slide {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.carousel-slide img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    flex-shrink: 0;
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    z-index: 10;
-    transition: background 0.3s ease;
-}
-
-.carousel-btn:hover {
-    background: rgba(0,0,0,0.8);
-}
-
-.prev-btn {
-    left: 15px;
-}
-
-/*focar em aplicar a fonte padrão*/
-p{
-    font-family: 'Montserrat';
-}
-
-.next-btn {
-    right: 15px;
-}
-
-.client-description {
-    margin-top: 1.5rem;
-    line-height: 1.8;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .client-content {
-        flex-direction: column;
-    }
-    
-    .tabs {
-        flex-wrap: wrap;
-    }
-    
-    .tab-button {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-}
-
-/* elementos visuais */
-
-.decorative-element {
-    position: absolute;
-    z-index: 1;
-    pointer-events: none;
-    max-width: 150px;
-    opacity: 0.9;
-    transition: transform 0.3s ease;
-}
-
-/* Elementos fixos (não movem com scroll) */
-.fixed-element {
-    position: fixed;
-}
-
-/* Elementos que acompanham o scroll */
-.scroll-element {
-    position: absolute;
-}
-
-/* Posicionamento específico para cada elemento */
-.element-1 {
-    top: 20%;
-    left: 5%;
-    transform: rotate(-15deg);
-}
-
-.element-2 {
-    bottom: 10%;
-    right: 5%;
-    transform: rotate(10deg);
-}
-
-.element-3 {
-    top: 30%;
-    right: 3%;
-    transform: rotate(5deg);
-}
-
-.element-4 {
-    bottom: 15%;
-    left: 8%;
-    transform: rotate(-10deg);
-}
-
-/* Ajuste para conteúdo ficar acima dos elementos */
-header, main, footer {
-    position: relative;
-    z-index: 2;
-}
-
-   /* Estilos específicos para o carrossel ajustado */
-   .client-carousel {
-    width: 50%; /* Ocupa metade do componente pai */
-    max-width: 700px; /* Limite máximo de largura */
-    margin: 0 auto; /* Centraliza o carrossel */
-}
-
-.carousel-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    aspect-ratio: 4/3; /* Proporção fixa para o container */
+    aspect-ratio: 4/3;
 }
 
 .carousel-slide {
@@ -349,9 +245,9 @@ header, main, footer {
 .carousel-slide img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Mantém a proporção sem cortar */
+    object-fit: contain;
     flex-shrink: 0;
-    padding: 10px; /* Espaço entre imagens */
+    padding: 10px;
     box-sizing: border-box;
 }
 
@@ -360,7 +256,6 @@ header, main, footer {
     top: 50%;
     transform: translateY(-50%);
     background: rgba(0,0,0,0.5);
-    color: white;
     border: none;
     padding: 15px;
     cursor: pointer;
@@ -382,29 +277,123 @@ header, main, footer {
     right: 10px;
 }
 
-/* Layout responsivo */
+.client-description {
+    margin-top: 1.5rem;
+    line-height: 1.8;
+}
+
+/* Estilos para a página "Quem Somos" */
+.profile-selector {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.selector-buttons {
+    margin-bottom: 2rem;
+}
+
+.selector-buttons button {
+    background-color: var(--transparent-light);
+    color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    margin: 0 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.selector-buttons button:hover {
+    background-color: var(--accent-color);
+}
+
+.profile-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem auto;
+    max-width: 1000px;
+    padding: 1rem;
+    animation: fadeIn 0.5s ease;
+}
+
+.profile-content img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.profile-text, .readable-text {
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilos para a página de Contato */
+.contact-info {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 2;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
-    .client-content {
+    .studio-font {
+        font-size: 2.5rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+    
+    main {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+    
+    .content {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    .client-content, .profile-content {
         flex-direction: column;
     }
     
     .client-carousel {
         width: 100%;
-        max-width: 100%;
     }
     
-    .client-info {
+    .client-info, .readable-text {
         width: 100%;
-        margin-top: 2rem;
+        margin-top: 1rem;
+        text-align: left;
     }
-}
-
-/* ============================================= */
-/* MEDIA QUERIES PARA CELULAR (até 480px) */
-/* ============================================= */
-
-@media (max-width: 480px) {
-    /* Elementos decorativos - reduz tamanho e ajusta posição */
+    
+    .selector-buttons button {
+        margin-bottom: 1rem;
+        width: 80%;
+    }
+    
     .decorative-element {
         max-width: 80px;
         opacity: 0.7;
@@ -429,107 +418,125 @@ header, main, footer {
         bottom: 8%;
         left: 3%;
     }
+}
 
-    /* Cabeçalho */
-    header {
-        padding: 0.5rem 0;
-    }
-    
-    .logo h1.studio-font {
-        font-size: 2.5rem; /* Reduz tamanho do logo */
-        margin: 0.5rem 0;
-    }
-
-    /* Menu de navegação */
-    nav ul {
-        flex-wrap: wrap;
-        padding: 0.5rem;
-    }
-    
-    nav ul li {
-        margin: 0.3rem;
+@media (max-width: 480px) {
+    .studio-font {
+        font-size: 2rem;
     }
     
     nav ul li a {
         padding: 0.3rem 0.8rem;
         font-size: 0.9rem;
     }
-
-    /* Conteúdo principal */
-    main {
-        padding: 1rem;
-        margin: 1rem auto;
-        border-radius: 5px;
+    
+    body {
+        background-attachment: scroll;
     }
     
-    .content {
-        padding: 1rem;
-        font-size: 1rem; /* Tamanho de fonte menor */
-        line-height: 1.5;
-    }
-    
-    .content h2.studio-font {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-    }
-    
-    .content p {
+    .tab-button {
+        padding: 8px 16px;
         font-size: 0.9rem;
     }
-
-    /* Rodapé */
-    footer {
-        padding: 0.8rem 0;
-        font-size: 0.8rem;
-    }
-
-    /* Ajustes específicos para o background */
-    body {
-        background-attachment: scroll; /* Remove fixed para melhor performance */
-        background-size: cover;
-    }
-
-    /* Melhorias de espaçamento geral */
-    * {
-        line-height: 1.4;
-    }
 }
 
-/* ============================================= */
-/* MEDIA QUERIES PARA TABLETS (481px - 768px) */
-/* ============================================= */
-@media (min-width: 481px) and (max-width: 768px) {
-    .decorative-element {
-        max-width: 100px;
-    }
-    
-    .logo h1.studio-font {
-        font-size: 3rem;
-    }
-    
-    .content {
-        font-size: 1.1rem;
-    }
-    
-    nav ul li a {
-        padding: 0.4rem 0.9rem;
-    }
-}
-
-/* ============================================= */
-/* AJUSTES ESPECÍFICOS PARA TELAS MUITO PEQUENAS */
-/* ============================================= */
 @media (max-width: 360px) {
-    .logo h1.studio-font {
-        font-size: 2rem;
-    }
-    
-    nav ul li a {
-        padding: 0.2rem 0.5rem;
-        font-size: 0.8rem;
+    .studio-font {
+        font-size: 1.8rem;
     }
     
     .content {
         padding: 0.8rem;
+    }
+}
+
+/* Estilos para a página "Quem Somos" - Perfis */
+.profile-selector {
+    margin: 3rem auto;
+    max-width: 1000px;
+    padding: 0 1rem;
+}
+
+.selector-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.selector-buttons button {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.selector-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.profile-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin: 2rem 0;
+    animation: fadeIn 0.5s ease;
+}
+
+.profile-content img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.profile-text {
+    flex: 1;
+    min-width: 300px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: left;
+}
+
+.readable-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Efeito de fade-in para os perfis */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .profile-text {
+        min-width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .selector-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .selector-buttons button {
+        width: 80%;
     }
 }
