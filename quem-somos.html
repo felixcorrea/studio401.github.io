@@ -5,7 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quem Somos?</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .presentation-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 2rem 1rem;
+            gap: 1rem;
+        }
 
+        .profile {
+            flex: 1 1 300px;
+            max-width: 300px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            transition: all 0.5s ease;
+            cursor: pointer;
+            transform: scale(0.9);
+        }
+
+        .profile img {
+            width: 100%;
+            border-radius: 1rem;
+            transition: transform 0.5s ease;
+        }
+
+        .profile-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            padding: 1rem;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: all 0.5s ease;
+            font-size: 0.9rem;
+        }
+
+        .profile.active {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+
+        .profile.active img {
+            transform: scale(1.1);
+        }
+
+        .profile.active .profile-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .presentation-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .profile {
+                max-width: 90%;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Elementos decorativos -->
@@ -31,14 +96,28 @@
     <main>
         <section class="content">
             <h2 class="studio-font">Quem Somos?</h2>
-
-            <p>Somos um estúdio de produção cultural e social media que transforma ideias em experiências envolventes e autênticas. Nossa missão é criar conexões reais por meio de conteúdos que emocionam, inspiram e impactam.</p>
-            
-            <p>No Studio 401, acreditamos no poder da arte e da comunicação para contar histórias que fazem a diferença. Com uma equipe talentosa e apaixonada, trabalhamos em projetos que vão da música às artes visuais, do digital ao presencial. Cada criação é pensada com estratégia e sensibilidade, garantindo que sua mensagem chegue de forma única ao público.</p>
-            
-            <p>Seja você um artista em busca de visibilidade ou uma marca querendo se conectar de verdade com seu público, o Studio 401 está pronto para fazer acontecer. Vamos juntos transformar ideias em experiências inesquecíveis!</p>
+            <p>Somos um estúdio de produção cultural e social media que transforma ideias em experiências envolventes e autênticas...</p>
         </section>
-  
+
+        <!-- Nova Seção com perfis -->
+        <section class="presentation-container">
+            <div class="profile" onclick="selectProfile(this)">
+                <img src="imagens\nos\image58.png" alt="Isa">
+                <div class="profile-text">
+                    <h3 class="studio-font">Isa</h3>
+                    <p>Breve apresentação da Isa. Sua história, habilidades ou papel no Studio 401.</p>
+                </div>
+            </div>
+
+            <div class="profile" onclick="selectProfile(this)">
+                <img src="imagens\nos\image61.png" alt="Gabi">
+                <div class="profile-text">
+                    <h3 class="studio-font">Gabi</h3>
+                    
+                    <p>Breve apresentação da Gabi. Sua trajetória, especialidade e contribuições para o estúdio.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -49,20 +128,26 @@
         // Efeito de parallax para alguns elementos
         document.addEventListener('DOMContentLoaded', function() {
             const scrollElements = document.querySelectorAll('.scroll-element');
-            
+
             window.addEventListener('scroll', function() {
                 const scrollPosition = window.pageYOffset;
-                
+
                 scrollElements.forEach(function(element, index) {
-                    // Ajuste a velocidade do movimento (quanto maior, mais rápido)
                     const speed = 0.2 + (index * 0.05);
                     const offset = scrollPosition * speed;
-                    
-                    // Aplica o movimento apenas no eixo Y
+
                     element.style.transform = `translateY(${offset}px) rotate(${index % 2 === 0 ? '10deg' : '-10deg'})`;
                 });
             });
         });
+
+        // Função para selecionar perfil
+        function selectProfile(selected) {
+            document.querySelectorAll('.profile').forEach(profile => {
+                profile.classList.remove('active');
+            });
+            selected.classList.add('active');
+        }
     </script>
 </body>
 </html>
